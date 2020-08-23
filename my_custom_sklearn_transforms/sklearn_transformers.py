@@ -2,6 +2,7 @@ import xgboost as xgb
 from sklearn.base import BaseEstimator, TransformerMixin
 from imblearn.under_sampling import AllKNN
 from xgboost import XGBClassifier
+from sklearn.model_selection import train_test_split
 
 # All sklearn Transforms must have the `transform` and `fit` methods
 class DropColumns(BaseEstimator, TransformerMixin):
