@@ -34,8 +34,8 @@ class Classifier(BaseEstimator, TransformerMixin):
         target_knn = ["PERFIL"]
 
         # Preparação dos argumentos para os métodos da biblioteca ``scikit-learn``
-        Xlinha = df_data_3[features_knn]
-        ylinha = df_data_3[target_knn]
+        Xlinha = X[features_knn]
+        ylinha = y[target_knn]
 
         allknn = AllKNN()
         X_resampled, y_resampled = allknn.fit_resample(Xlinha,ylinha)
