@@ -25,12 +25,12 @@ class Classifier(BaseEstimator, TransformerMixin):
 
     def fit(self, X, y):
         # Preparação dos argumentos para os métodos da biblioteca ``scikit-learn``
-        Xlinha = X[self.columns]
-        ylinha = y
+        #Xlinha = X[self.columns]
+        #ylinha = y
         allknn = AllKNN()
 
         #allknn = AllKNN()
-        X_resampled, y_resampled = allknn.fit_resample(Xlinha,ylinha)
+        X_resampled, y_resampled = allknn.fit_resample(X,y)
         X_train, X_test, y_train, y_test = train_test_split(X_resampled, y_resampled, test_size=0.2, random_state=1)   
         model = XGBClassifier()        
         return model
