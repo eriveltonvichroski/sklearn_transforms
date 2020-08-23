@@ -25,7 +25,7 @@ class Classifier(BaseEstimator, TransformerMixin):
 
     def fit(self, X, y):
         # Preparação dos argumentos para os métodos da biblioteca ``scikit-learn``
-        Xlinha = X[columns]
+        Xlinha = X[self.columns]
         ylinha = y
         allknn = AllKNN()
 
